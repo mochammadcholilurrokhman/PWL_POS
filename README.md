@@ -9,22 +9,13 @@ Kelas : TI-2F
 #### Langkah Langkah Praktikum
    <img src = "public/screenshot/1.png">
 
-### Route Parameters
+### Praktikum 2.1 Pembuatan Migrasi tanpa relasi
 
 #### Langkah Langkah Praktikum
 
-b. <img src = "public/screenshot/5.png">
+  <img src = "public/screenshot/2.png">
 
-c. <img src = "public/screenshot/6.png">
 
-e. <img src = "public/screenshot/7.png">
-
-f. 
-
-    Route::get('/articles{id}', function ($id) {
-    echo "Halaman Artikel dengan ID $id";
-    }); <br>
-<img src = "public/screenshot/8.png">
 
 ### Operational Parameters
 
