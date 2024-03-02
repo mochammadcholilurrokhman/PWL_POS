@@ -14,6 +14,11 @@ class Usercontroller extends Controller
         // Tambah data user dengan Elequent Model
 
         $data = [
+            // 'username' => 'Customer-1',
+            // 'nama' => 'Pelanggan Pertama',
+            // 'password' => Hash::make('12345'),
+            // 'level_id' => 3
+           
             // 'username' => 'customer 1',
             // 'nama' => 'Pelanggan',
             // 'password' => Hash::make('12345'),
