@@ -1,4 +1,8 @@
+
 ## Laporan JOBSHEET 03 MIGRATION, SEEDER, DB FAÇADE, QUERY BUILDER, dan ELOQUENT ORM
+
+ ## JOBSHEET 04 MODEL dan ELOQUENT ORM (ada dibawah)
+
 
 NIM : 2241720033 <br>
 Nama : Mochammad Cholilur Rokhman <br>
@@ -42,3 +46,39 @@ Kelas : TI-2F
 12. Menurut kalian, lebih mudah menggunakan mana dalam melakukan operasi CRUD ke database (DB Façade / Query Builder / Eloquent ORM) ? jelaskan <br>
     Menurut saya lebih muda menggunakan DB Facade karena pada DB facade 
     memberikan kontrol langsung atas query yang dijalankan ke database tanpa harus memikirkan struktur model atau ORM
+
+
+## Jobsheet 4
+### Praktikum 1 $fillable
+
+1. Untuk langkah 4 dan 5 hasilnya akan eror
+
+![alt text](image.png)
+
+### Praktikum 2.1 Retriving Single Models
+
+1. Untuk langkah 1 dan 2 akan eror
+![alt text](image-1.png)
+2. Untuk langkah ke 4 tidak eror karena menggunakan clausa where yang mendefinisikan kondisi 
+![alt text](image-2.png)
+3. Untuk langkah ke 6 juga tidak eror karena terdapat kondisi
+![alt text](image-3.png)
+4. Untuk langkah ke 8 hasilnya eror
+![alt text](image-4.png)
+5. Untuk langkah ke 10 hasilnya eror
+![alt text](image-5.png)
+
+### Praktikum 2.2 Not Found Exceptions
+
+1. Untuk langkah ke 1 Hasilnya eror
+![alt text](image-6.png)
+2. Untuk langkah ke 3 Hasilnya eror karena tidak ada user namanya manager9
+![alt text](image-7.png)
+
+### Praktikum Retreiving Aggregates
+
+1. Untuk langkah 1
+![alt text](image-8.png)
+2. Ubah script pada view <br>
+![alt text](image-9.png)
+
