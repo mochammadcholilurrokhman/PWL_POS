@@ -84,7 +84,7 @@ Kelas : TI-2F
 
 ### Praktikum 2.4 Retreiving or Creating Models
 
-1. Untuk langkah 1 dan 2 
+1. Untuk langkah 1 dan 2  <br>
 ![alt text](image-10.png)
 2. Untuk langkah 4 didalam m_user ada user baru bernama manager dua dua <br>
 ![alt text](image-11.png)
@@ -92,6 +92,6 @@ Kelas : TI-2F
 ![alt text](image-10.png)
 4. Untuk langkah 8 didalam m_user ada user baru bernama manager tiga tiga <br>
 ![alt text](image-12.png)
-5. Untuk langkah 9
+5. Untuk langkah 9 <br>
 ![alt text](image-12.png)
 
