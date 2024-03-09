@@ -1,12 +1,14 @@
 
 ## Laporan JOBSHEET 03 MIGRATION, SEEDER, DB FAÇADE, QUERY BUILDER, dan ELOQUENT ORM
 
- ## JOBSHEET 04 MODEL dan ELOQUENT ORM (ada dibawah)
+## JOBSHEET 04 MODEL dan ELOQUENT ORM (ada dibawah jobsheet 3)
 
 
 NIM : 2241720033 <br>
 Nama : Mochammad Cholilur Rokhman <br>
 Kelas : TI-2F
+
+## Jobsheet 3
 
 1. Pada Praktikum 1 - Tahap 5, apakah fungsi dari APP_KEY pada file setting .env Laravel? <br>
    Digunakan untuk mengamankan data yang sensitif, seperti sesi pengguna dana kata sandi
