@@ -75,10 +75,23 @@ Kelas : TI-2F
 2. Untuk langkah ke 3 Hasilnya eror karena tidak ada user namanya manager9
 ![alt text](image-7.png)
 
-### Praktikum Retreiving Aggregates
+### Praktikum  2.3 Retreiving Aggregates
 
 1. Untuk langkah 1
 ![alt text](image-8.png)
 2. Ubah script pada view <br>
 ![alt text](image-9.png)
+
+### Praktikum 2.4 Retreiving or Creating Models
+
+1. Untuk langkah 1 dan 2 
+![alt text](image-10.png)
+2. Untuk langkah 4 didalam m_user ada user baru bernama manager dua dua <br>
+![alt text](image-11.png)
+3. Untuk langkah 6 <br>
+![alt text](image-10.png)
+4. Untuk langkah 8 didalam m_user ada user baru bernama manager tiga tiga <br>
+![alt text](image-12.png)
+5. Untuk langkah 9
+![alt text](image-12.png)
 
