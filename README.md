@@ -59,9 +59,9 @@ Kelas : TI-2F
 
 1. Untuk langkah 1 dan 2 akan eror
 ![alt text](image-1.png)
-2. Untuk langkah ke 4 tidak eror karena menggunakan clausa where yang mendefinisikan kondisi 
+2. Untuk langkah ke 4 tidak eror karena menggunakan clausa where yang mendefinisikan kondisi <br>
 ![alt text](image-2.png)
-3. Untuk langkah ke 6 juga tidak eror karena terdapat kondisi
+3. Untuk langkah ke 6 juga tidak eror karena terdapat kondisi <br>
 ![alt text](image-3.png)
 4. Untuk langkah ke 8 hasilnya eror
 ![alt text](image-4.png)
