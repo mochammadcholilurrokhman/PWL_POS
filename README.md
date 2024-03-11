@@ -97,9 +97,9 @@ Kelas : TI-2F
 
 ### Praktikum 2.5 Atrribute Changes
 
-1. Untuk langkah 1
+1. Untuk langkah 1 <br>
    ![alt text](image-12.png)
-2. Untuk langkah 3
+2. Untuk langkah 3 <br>
    ![alt text](image-13.png)
 
 ### Praktikum 2.6 Create, Read, Update, Delete (CRUD)
