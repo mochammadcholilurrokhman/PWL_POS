@@ -104,9 +104,9 @@ Kelas : TI-2F
 
 ### Praktikum 2.6 Create, Read, Update, Delete (CRUD)
 
-1. Untuk langkah 1 dan 2
+1. Untuk langkah 1 dan 2 <br>
    ![alt text](image-14.png)
-2. Untuk langkah 4 s/d 6
+2. Untuk langkah 4 s/d 6 <br>
    ![alt text](image-15.png)
 3. Untuk langkah 8 dan 9 disini saya menambahkan user dengan nama manager1111 <br>
    ![alt text](image-16.png)
