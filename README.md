@@ -57,7 +57,7 @@ Kelas : TI-2F
 
 ### Praktikum 2.1 Retriving Single Models
 
-1. Untuk langkah 1 dan 2
+1. Untuk langkah 1 dan 2 <br>
    ![alt text](image-1.png)
 2. Untuk langkah ke 4 tidak eror karena menggunakan clausa where yang mendefinisikan kondisi <br>
    ![alt text](image-2.png)
@@ -70,7 +70,7 @@ Kelas : TI-2F
 
 ### Praktikum 2.2 Not Found Exceptions
 
-1. Untuk langkah ke 1
+1. Untuk langkah ke 1 <br>
    ![alt text](image-1.png)
 2. Untuk langkah ke 3
    ![alt text](image-7.png)
@@ -108,14 +108,15 @@ Kelas : TI-2F
    ![alt text](image-14.png)
 2. Untuk langkah 4 s/d 6
    ![alt text](image-15.png)
-3. Untuk langkah 8 dan 9 disini saya menambahkan user dengan nama manager1111
+3. Untuk langkah 8 dan 9 disini saya menambahkan user dengan nama manager1111 <br>
    ![alt text](image-16.png)
 4. Untuk langkah 11 s/d 13 <br>
   ![alt text](image-17.png)
-5. Untuk langkah 15 dan 16 dari nama manager1111 saya ubah menjadi manager1000
+5. Untuk langkah 15 dan 16 dari nama manager1111 saya ubah menjadi manager1000 <br>
   ![alt text](image-18.png)
-6. Untuk langkah 18 dan 19 Data dengan nama manager1000 hilang karena saya hapus
+6. Untuk langkah 18 dan 19 Data dengan nama manager1000 hilang karena saya hapus <br>
   ![alt text](image-19.png)
+
 ### Praktikum 2.7 Relationship
 
 1. Untuk langkah 2
