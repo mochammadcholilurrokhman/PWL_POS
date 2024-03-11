@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get('/level', [Levelcontroller::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [Usercontroller::class, 'index']);
+Route::get('/user/tambah', [Usercontroller::class, 'tambah']);
+Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
+Route::get('/user/ubah/{id}', [Usercontroller::class, 'ubah']);
+Route::put('/user/ubah_simpan/{id}', [Usercontroller::class, 'ubah_simpan']);
+Route::get('/user/hapus/{id}', [Usercontroller::class, 'hapus']);
