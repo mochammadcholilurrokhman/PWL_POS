@@ -1,5 +1,5 @@
 
-## JOBSHEET 04 MODEL dan ELOQUENT ORM (ada dibawah jobsheet 3)
+## JOBSHEET 04 MODEL dan ELOQUENT ORM
 
 NIM : 2241720033 <br>
 Nama : Mochammad Cholilur Rokhman <br>
