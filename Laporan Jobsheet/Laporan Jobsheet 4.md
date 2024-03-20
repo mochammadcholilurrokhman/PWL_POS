@@ -33,7 +33,7 @@ Kelas : TI-2F
 
 ### Praktikum 2.3 Retreiving Aggregates
 
-1. Untuk langkah 1
+1. Untuk langkah 1 <br>
    ![alt text](image-8.png)
 2. Ubah script pada view <br>
    ![alt text](image-9.png)
@@ -75,5 +75,5 @@ Kelas : TI-2F
 
 ### Praktikum 2.7 Relationship
 
-1. Untuk langkah 2
+1. Untuk langkah 2 <br>
 ![alt text](image-20.png)
