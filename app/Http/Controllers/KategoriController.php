@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-Use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use App\DataTables\KategoriDataTable;
+use App\Http\Requests\StorePostRequest;
+use App\Models\Kategori;
 use App\Models\KategoriModel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class KategoriController extends Controller
 {
@@ -13,38 +16,45 @@ class KategoriController extends Controller
     {
         return $dataTable->render('kategori.index');
     }
+
     public function create()
     {
         return view('kategori.create');
     }
-    public function store(Request $request)
+
+    public function store(StorePostRequest $request)
     {
-        $validated = $request->validate([
-            'kategori_kode' => $request->kodeKategori,
-            'kategori_nama' => $request->namaKategori,
-        ]);
+        $validated = $request->safe()->only(['kategori_kode', 'kategori_nama']);
+
+        KategoriModel::create($validated);
         return redirect('/kategori');
     }
-    function edit($id) {
-        return view('kategori.edit', ['data' => KategoriModel::find($id)]);
-    }
-
-    /**
-     * Update kategori data
-     */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         $kategori = KategoriModel::find($id);
-        $kategori->kategori_kode = $request->kategori_kode;
-        $kategori->kategori_nama = $request->kategori_nama;
+        return view('kategori.update', ['data' => $kategori]);
+    }
+
+    public function update_simpan($id, Request $request)
+    {
+        $request->validate([
+            'kodeKategori' => 'required',
+            'namaKategori' => 'required',
+        ]);
+
+        $kategori = KategoriModel::findOrFail($id);
+
+        $kategori->kategori_kode = $request->kodeKategori;
+        $kategori->kategori_nama = $request->namaKategori;
 
         $kategori->save();
-        return redirect('/kategori');
+        return redirect('/kategori')->with('success', 'Kategori berhasil diperbarui.');
     }
-     function delete($id) {
-        KategoriModel::find($id)->delete();
+    public function hapus($id)
+    {
+        $kategori = KategoriModel::find($id);
+        $kategori->delete();
 
         return redirect('/kategori');
     }
-
 }

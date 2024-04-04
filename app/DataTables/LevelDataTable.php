@@ -22,7 +22,13 @@ class LevelDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-        ->setRowId('id');
+            ->addColumn('action', function ($level) {
+                return '<div class="btn-group" role="group">' .
+                    '<a href="' . route('/level/update', ['id' => $level->level_id]) . '" class="btn btn-primary btn-sm"></i> Update</a>' .
+                    '<a href="' . route('/level/hapus', ['id' => $level->level_id]) . '" class="btn btn-danger btn-sm"></i> Delete</a>' .
+                    '</div>';
+            })
+            ->setRowId('id');
     }
 
     /**
@@ -61,11 +67,21 @@ class LevelDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            /*Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->addClass('text-center'),*/
             Column::make('level_id'),
             Column::make('level_kode'),
             Column::make('level_nama'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::computed('action')
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
         ];
     }
 

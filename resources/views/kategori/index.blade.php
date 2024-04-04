@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- Customize layout sections --}}
-
 @section('subtitle', 'Kategori')
 @section('content_header_title', 'Home')
 @section('content_header_subtitle', 'Kategori')
@@ -11,13 +9,11 @@
         <div class="card">
             <div class="card-header">Manage Kategori</div>
             <div class="card-body">
+                <a href="{{ route('/kategori/create') }}" class="btn btn-primary rounded-lg px-2 btn-xs mb-3">+ Tambah Kategori</a>
                 {{ $dataTable->table() }}
-                <a class="btn btn-primary" href="./kategori/create">Add Kategori Barang</a>
             </div>
         </div>
     </div>
 @endsection
 
-@push('scripts')
-    {{ $dataTable->scripts() }}
-@endpush
+@push('scripts') {{ $dataTable->scripts() }} @endpush

@@ -22,13 +22,13 @@ class KategoriDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->setRowId('id') 
-            ->addColumn('action', function ($row) {
+            ->addColumn('action', function ($kategori) {
                 return '<div class="btn-group " role="group">' .
-                 '<a href="' . route('kategori.edit', $row->kategori_id) . '" class="btn btn-sm btn-primary">Edit</a>' .
-                 '<a href="' . route('kategori.delete', $row->kategori_id) . '" class="btn btn-sm btn-danger">Hapus</a>' .
-                 '</div>';
-            });
+                    '<a href="' . route('/kategori/update', ['id' => $kategori->kategori_id]) . '" class="btn btn-primary btn-sm">Update</a>' .
+                    '<a href="' . route('/kategori/hapus', ['id' => $kategori->kategori_id]) . '" class="btn btn-danger btn-sm">Delete</a>' .
+                    '</div>';
+            })
+            ->setRowId('id');
     }
 
     /**
@@ -45,20 +45,20 @@ class KategoriDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('kategori-table')
-            ->columns($this->getColumns())
-            ->minifiedAjax()
-            //->dom('Bfrtip')
-            ->orderBy(1)
-            ->selectStyleSingle()
-            ->buttons([
-                Button::make('excel'),
-                Button::make('csv'),
-                Button::make('pdf'),
-                Button::make('print'),
-                Button::make('reset'),
-                Button::make('reload'),
-            ]);
+                    ->setTableId('kategori-table')
+                    ->columns($this->getColumns())
+                    ->minifiedAjax()
+                    //->dom('Bfrtip')
+                    ->orderBy(1)
+                    ->selectStyleSingle()
+                    ->buttons([
+                        Button::make('excel'),
+                        Button::make('csv'),
+                        Button::make('pdf'),
+                        Button::make('print'),
+                        Button::make('reset'),
+                        Button::make('reload')
+                    ]);
     }
 
     /**
@@ -67,6 +67,11 @@ class KategoriDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            /*Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->addClass('text-center'),*/
             Column::make('kategori_id'),
             Column::make('kategori_kode'),
             Column::make('kategori_nama'),
@@ -79,7 +84,6 @@ class KategoriDataTable extends DataTable
                 ->addClass('text-center'),
         ];
     }
-
 
     /**
      * Get the filename for export.

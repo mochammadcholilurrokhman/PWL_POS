@@ -1,7 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Data Level Penguna</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Level Pengguna</title>
 </head>
 <body>
     <h1>Data Level Pengguna</h1>
@@ -11,11 +15,11 @@
             <th>Kode Level</th>
             <th>Nama Level</th>
         </tr>
-        @foreach ($data as $d)
+        @foreach($data as $d)
             <tr>
                 <td>{{ $d->level_id }}</td>
-                <td>{{ $d->level_kode}}</td>
-                <td>{{ $d->level_nama}}</td>
+                <td>{{ $d->level_kode }}</td>
+                <td>{{ $d->level_nama }}</td>
             </tr>
         @endforeach
     </table>
