@@ -325,7 +325,17 @@ return [
          [
             'text' => 'Manage Kategori',
             'url' => 'kategori',
-            'icon' => 'far fa-fw fa-folder',
+            'icon' => 'far fa-fw fa-folder-open',
+        ],
+        [
+            'text' => 'Manage Level',
+            'url' => 'level',
+           'icon' => 'fas fa-fw fa-cogs',
+        ],
+        [
+            'text' => 'Manage User',
+            'url' => 'm_user',
+            'icon' => 'fas fa-fw fa-users-cog',
         ],
         ['header' => 'account_settings'],
         [
