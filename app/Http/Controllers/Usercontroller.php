@@ -3,57 +3,60 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserModel;
+use App\Models\LevelModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $user = UserModel::with('level')->get();
-        dd($user);
-//        $user = UserModel::all();
-//        return view('user', ['data' => $user]);
-    }
-    public function tambah()
-    {
-        return view('user_tambah');
-    }
-    public function tambah_simpan(Request $request)
-    {
-        UserModel::create([
-            'username' => $request->username,
-            'nama' => $request->nama,
-            'password' => Hash::make($request->password),
-            'level_id' => $request->level_id
-        ]);
+        $breadcrumb = (object) [
+            'title' => 'Daftar User',
+            'list' => ['Home', 'User']
+        ];
 
-        return redirect('/user');
+        $page = (object) [
+            'title' => 'Daftar User yang terdaftar dalam sistem'
+        ];
+
+        $activeMenu = 'user';
+
+        return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu]);
     }
 
-    public function ubah($id)
+    public function list (Request $request)
     {
-        $user = UserModel::find($id);
-        return view('user_ubah', ['data' => $user]);
+    $users = UserModel::select('user_id', 'username', 'nama', 'level_id')
+            ->with('level');
+    return DataTables::of($users)
+
+    ->addIndexColumn() // menambahkan kolom index / no urut (default nama kolom: DT_RowIndex)
+    ->addColumn('aksi', function ($user) { // menambahkan kolom aksi
+        $btn = '<a href="'.url('/user/' . $user->user_id).'" class="btn btn-info btn-sm">Detail</a> ';
+        $btn .= '<a href="'.url('/user/' . $user->user_id . '/edit').'" class="btn btn-warning btn-sm">Edit</a> ';
+        $btn .= '<form class="d-inline-block" method="POST" action="'. url('/user/'.$user->user_id).'">'. csrf_field() . method_field('DELETE') . 
+                '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus data ini?\');">Hapus</button></form>'; 
+        return $btn;
+    })
+    ->rawColumns(['aksi']) // memberitahu bahwa kolom aksi adalah html
+    ->make(true);
     }
+    public function create(){
+        $breadcrumb = (object) [
+            'title' => 'Tambah User',
+            'list' => ['Home', 'User', 'Tambah']
+        ];
 
-    public function ubah_simpan($id, Request $request)
-    {
-        $user = UserModel::find($id);
-        $user->username = $request->username;
-        $user->nama = $request->nama;
-        $user->password = Hash::make($request->password);
-        $user->level_id = $request->level_id;
+        $page = (object) [
+            'title' => 'Tambah User Baru'
+        ];
 
-        $user->save();
-        return redirect('/user');
-    }
+        $level = LevelModel::all();
+        $activeMenu = 'user';
 
-    public function hapus($id)
-    {
-        $user = UserModel::find($id);
-        $user->delete();
-
-        return redirect('/user');
+        return view('user.create', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level, 'activeMenu' => $activeMenu]);
     }
 }
+
+

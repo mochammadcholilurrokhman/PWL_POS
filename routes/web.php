@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [WelcomeController::class, 'index']);
+
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/',[UserController::class,'index']); 
+    Route::post('/list',[UserController::class,'list']); 
+    Route::get('/create',[UserController::class,'create']); 
+    Route::post('/',[UserController::class,'store']); 
+    Route::get('/{id}',[UserController::class,'show']); 
+    Route::get('/{id}/edit',[UserController::class,'edit']); 
+    Route::put('/{id}',[UserController::class,'update']); 
+    Route::delete('/{id}',[UserController::class,'destroy']); 
 });
 
 Route::prefix('/level')->group(function () {
@@ -33,12 +44,6 @@ Route::prefix('/kategori')->group(function () {
     Route::put('/update_simpan/{id}', [\App\Http\Controllers\KategoriController::class, 'update_simpan'])->name('/kategori/update_simpan');
     Route::get('/hapus/{id}', [\App\Http\Controllers\KategoriController::class, 'hapus'])->name('/kategori/hapus');
 });
-Route::prefix('/user')->group(function () {
-    Route::get('/', [\App\Http\Controllers\UserController::class, 'index']);
-    Route::get('/tambah', [\App\Http\Controllers\UserController::class, 'tambah']);
-    Route::post('/tambah_simpan', [\App\Http\Controllers\UserController::class, 'tambah_simpan']);
-    Route::get('/ubah/{id}', [\App\Http\Controllers\UserController::class, 'ubah']);
-    Route::put('/ubah_simpan/{id}', [\App\Http\Controllers\UserController::class, 'ubah_simpan']);
-    Route::get('/hapus/{id}', [\App\Http\Controllers\UserController::class, 'hapus']);
-});
+
+
 Route::resource('m_user', \App\Http\Controllers\POSController::class);
