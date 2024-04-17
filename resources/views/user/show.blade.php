@@ -1,43 +1,48 @@
-@extends('layouts.app')
-@section('subtitle', 'User')
-@section('content_header_title', 'Show')
-@section('content_header_subtitle', 'User')
+@extends('layouts.template')
+
 @section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">Edit Level</div>
-            <div class="card-body">
-                <a class="btn btn-secondary" href="{{ route('m_user.index') }}">
-                    Kembali</a>
-            </div>
-            <div>
-                <table class="table table-bordered">
+    <div class="card card-outline card-primary">
+        <div class="card-header">
+            <h3 class="card-title">{{ $page->title }}</h3>
+            <div class="card-tools"></div>  
+        </div>
+        <div class="card-body">
+            @empty($user)
+                <div class="alert alert-danger alert-dismissible">
+                    <h5><i class="icon fas fa-ban"></i> Kesalahan!</h5>
+                    Data yang Anda cari tidak ditemukan.
+                </div>
+            @else
+                <table class="table table-bordered table-striped table-hover tablesm">
                     <tr>
-                        <td><strong>User_id:</strong></td>
-                        <td>{{ $useri->user_id }}</td>
+                        <th>ID</th>
+                        <td>{{ $user->user_id }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Level_id:</strong></td>
-                        <td>{{ $useri->level_id }}</td>
+                        <th>Level</th>
+                        <td>{{ $user->level->level_nama }}</td>
+                    </tr>   
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ $user->username }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Level Kode:</strong></td>
-                        <td>{{ $useri->level->level_kode }}</td>
+                        <th>Nama</th>
+                        <td>{{ $user->nama }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Level Nama:</strong></td>
-                        <td>{{ $useri->level->level_nama }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Username:</strong></td>
-                        <td>{{ $useri->username }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nama:</strong></td>
-                        <td>{{ $useri->nama }}</td>
+                        <th>Password</th>
+                        <td>********</td>
                     </tr>
                 </table>
-            </div>
+            @endempty
+            <a href="{{ url('user') }}" class="btn btn-sm btn-default mt-2">Kembali</a>
         </div>
     </div>
 @endsection
+
+@push('css')
+@endpush
+
+@push('js')
+@endpush
