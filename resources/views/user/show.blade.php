@@ -13,7 +13,7 @@
                     Data yang Anda cari tidak ditemukan.
                 </div>
             @else
-                <table class="table table-bordered table-striped table-hover tablesm">
+                <table class="table table-bordered table-striped table-hover table-sm">
                     <tr>
                         <th>ID</th>
                         <td>{{ $user->user_id }}</td>
