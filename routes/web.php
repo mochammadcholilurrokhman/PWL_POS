@@ -102,4 +102,4 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('manager', ManagerController::class);
     });
 });
-Route::resource('m_user', \App\Http\Controllers\POSController::class);
+// Route::resource('m_user', \App\Http\Controllers\POSController::class);
