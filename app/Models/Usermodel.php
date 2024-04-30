@@ -22,7 +22,7 @@ class UserModel extends Authenticatable implements JWTSubject
     {
         return [];
     }
-    
+
     use HasFactory;
 
     protected $table = 'm_user';
